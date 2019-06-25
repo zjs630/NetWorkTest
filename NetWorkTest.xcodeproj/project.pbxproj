@@ -14,7 +14,7 @@
 		E54DAD4522BF3D7A000E7B13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E54DAD4422BF3D7A000E7B13 /* Assets.xcassets */; };
 		E54DAD4822BF3D7A000E7B13 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54DAD4622BF3D7A000E7B13 /* LaunchScreen.storyboard */; };
 		E5670A7022BFA35F00EC12ED /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5670A6F22BFA35F00EC12ED /* NetworkManager.swift */; };
-		E571AD2922BF76E90011C3DB /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571AD2822BF76E90011C3DB /* UserModel.swift */; };
+		E571AD2922BF76E90011C3DB /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571AD2822BF76E90011C3DB /* AppModel.swift */; };
 		E5CF1DB422BFD3D600027AA0 /* AppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF1DB322BFD3D500027AA0 /* AppCell.swift */; };
 		E5CF1DB622C05F6900027AA0 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CF1DB522C05F6900027AA0 /* RootViewController.swift */; };
 		E5FCEB3222BFC0FD002B6EEE /* NetHostConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FCEB3122BFC0FD002B6EEE /* NetHostConfig.swift */; };
@@ -33,7 +33,7 @@
 		E54DAD4722BF3D7A000E7B13 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E54DAD4922BF3D7A000E7B13 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5670A6F22BFA35F00EC12ED /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		E571AD2822BF76E90011C3DB /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		E571AD2822BF76E90011C3DB /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		E5CF1DB322BFD3D500027AA0 /* AppCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCell.swift; sourceTree = "<group>"; };
 		E5CF1DB522C05F6900027AA0 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		E5FCEB3122BFC0FD002B6EEE /* NetHostConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetHostConfig.swift; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 		E5FCEB3622BFCC17002B6EEE /* M */ = {
 			isa = PBXGroup;
 			children = (
-				E571AD2822BF76E90011C3DB /* UserModel.swift */,
+				E571AD2822BF76E90011C3DB /* AppModel.swift */,
 			);
 			path = M;
 			sourceTree = "<group>";
@@ -256,7 +256,7 @@
 				E54DAD4022BF3D79000E7B13 /* ListViewController.swift in Sources */,
 				E5CF1DB422BFD3D600027AA0 /* AppCell.swift in Sources */,
 				E5FCEB3222BFC0FD002B6EEE /* NetHostConfig.swift in Sources */,
-				E571AD2922BF76E90011C3DB /* UserModel.swift in Sources */,
+				E571AD2922BF76E90011C3DB /* AppModel.swift in Sources */,
 				E54DAD3E22BF3D79000E7B13 /* AppDelegate.swift in Sources */,
 				E5FCEB3422BFC873002B6EEE /* ViewControllerViewModel.swift in Sources */,
 				E5CF1DB622C05F6900027AA0 /* RootViewController.swift in Sources */,
@@ -409,6 +409,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NetWorkTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -427,6 +428,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NetWorkTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

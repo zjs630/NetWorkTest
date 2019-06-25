@@ -8,7 +8,7 @@
 
 import Foundation
 class ViewControllerViewModel {
-    var dataList: [UserModel]?
+    var dataList: [AppModel]?
     
     func getStudents(finishedCallback: @escaping (_ isSuccess: Bool) -> Void)  {
         let urlStr = "test/json.php"
@@ -16,7 +16,9 @@ class ViewControllerViewModel {
         NetworkManager.request(urlStr).responseData { (response) in
             if let data = response.data {
                 do {
-                    let model = try JSONDecoder().decode(Result<UserModel>.self , from: data)
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let model = try decoder.decode(Result<AppModel>.self , from: data)
                     print(model)
                     self.dataList = model.data
                     finishedCallback(true)

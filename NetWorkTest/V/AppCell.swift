@@ -13,10 +13,10 @@ class AppCell: UITableViewCell {
     var iconImageView = UIImageView()
     var nameLabel: UILabel = UILabel()
 
-    var model: UserModel?  {
+    var model: AppModel?  {
         didSet {
             nameLabel.text = model?.name
-            let url = URL(string: model?.icon ?? "")
+            let url = URL(string: model?.appIcon ?? "")
             iconImageView.kf.setImage(with: url)
         }
     }
