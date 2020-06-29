@@ -9,17 +9,9 @@
 import UIKit
 import Kingfisher
 class AppCell: UITableViewCell {
-
+    
     var iconImageView = UIImageView()
     var nameLabel: UILabel = UILabel()
-
-    var model: AppModel?  {
-        didSet {
-            nameLabel.text = model?.name
-            let url = URL(string: model?.appIcon ?? "")
-            iconImageView.kf.setImage(with: url)
-        }
-    }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -33,6 +25,18 @@ class AppCell: UITableViewCell {
 }
 
 extension AppCell {
+    
+    /// 更新UI
+    func updateUI(with model: AppModel?) {
+        if let m = model {
+            nameLabel.text = m.name
+            //备注 icon url 自己设置
+            let url = URL(string: "\(NetHostConfig.host)/test/image/\(m.appIcon)")
+            iconImageView.kf.setImage(with: url)
+        }
+    }
+    
+    /// 设置UI
     private func setupUI() {
         
         contentView.addSubview(iconImageView)

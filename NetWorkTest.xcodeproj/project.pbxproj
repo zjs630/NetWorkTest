@@ -92,7 +92,7 @@
 			children = (
 				E54DAD3D22BF3D79000E7B13 /* AppDelegate.swift */,
 				E5CF1DB522C05F6900027AA0 /* RootViewController.swift */,
-				E54DAD3F22BF3D79000E7B13 /* ListViewController.swift */,
+				E5B8A05B24A9BC48009B04BE /* C */,
 				E5CF1DB222BFD3D500027AA0 /* V */,
 				E5FCEB3622BFCC17002B6EEE /* M */,
 				E5FCEB3522BFCC0B002B6EEE /* VM */,
@@ -112,6 +112,14 @@
 				E5FCEB3122BFC0FD002B6EEE /* NetHostConfig.swift */,
 			);
 			path = NetTool;
+			sourceTree = "<group>";
+		};
+		E5B8A05B24A9BC48009B04BE /* C */ = {
+			isa = PBXGroup;
+			children = (
+				E54DAD3F22BF3D79000E7B13 /* ListViewController.swift */,
+			);
+			path = C;
 			sourceTree = "<group>";
 		};
 		E5CF1DB222BFD3D500027AA0 /* V */ = {
@@ -344,6 +352,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -398,6 +407,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -409,7 +419,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NetWorkTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -428,7 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = NetWorkTest/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

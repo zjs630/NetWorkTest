@@ -10,15 +10,20 @@ import Foundation
 import Alamofire
 
 /// 隔离Alamofire网络库
-class NetworkManager: SessionManager {
-    static let shared: SessionManager = {
+class NetworkManager: Session {
+    static let shared: Session = {
         let configuration = URLSessionConfiguration.default
         configuration.timeoutIntervalForRequest = 15
-        configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
-        let sessionManager = SessionManager(configuration: configuration)
+        let sessionManager = Session(configuration: configuration)
         return sessionManager
     }()
-    
+
+    static let decoder: JSONDecoder = {
+        let d = JSONDecoder()
+        d.keyDecodingStrategy = .convertFromSnakeCase
+        return d
+    }()
+
     /// 网络请求
     ///
     /// - Parameters:
@@ -38,5 +43,18 @@ class NetworkManager: SessionManager {
         return NetworkManager.shared.request(urlStr, method: method, parameters: parameters, encoding: encoding, headers: headers)
     }
 
+    // 直接将网络数据转Model
+    static func requestDecodable<T: Decodable>(
+        _ url: String,
+        method: HTTPMethod = .get,
+        parameters: Parameters? = nil,
+        encoding: ParameterEncoding = URLEncoding.default,
+        headers: HTTPHeaders? = nil,
+        type: T.Type = T.self,
+        completionHandler: @escaping (AFDataResponse<T>) -> Void){
+
+        let urlStr = NetHostConfig.host.appending(url)
+        NetworkManager.shared.request(urlStr, method: method, parameters: parameters, encoding: encoding, headers: headers).responseDecodable(of:type, decoder: NetworkManager.decoder,completionHandler: completionHandler)
+    }
 
 }

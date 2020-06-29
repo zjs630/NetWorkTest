@@ -7,26 +7,27 @@
 //
 
 import Foundation
+
 class ViewControllerViewModel {
     var dataList: [AppModel]?
+
+    var listCount: Int {
+        return dataList?.count ?? 0
+    }
     
     func getStudents(finishedCallback: @escaping (_ isSuccess: Bool) -> Void)  {
-        let urlStr = "test/json.php"
-        
-        NetworkManager.request(urlStr).responseData { (response) in
-            if let data = response.data {
-                do {
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let model = try decoder.decode(Result<AppModel>.self , from: data)
-                    print(model)
-                    self.dataList = model.data
-                    finishedCallback(true)
-                } catch {
-                    print(error)
-                }
+        let urlPathStr = "test/json.php"
+
+        NetworkManager.requestDecodable(urlPathStr,type:ResultList<AppModel>.self) { (response) in
+            if let listModel = response.value {
+                self.dataList = listModel.data
+                finishedCallback(true)
+            } else {
+                finishedCallback(false)
             }
-            finishedCallback(false)
         }
+
     }
+
+
 }

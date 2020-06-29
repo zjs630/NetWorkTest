@@ -11,11 +11,12 @@ import Foundation
 struct NetHostConfig {
     #if DEBUG // DEBUG模式开发用，可以改为任何环境
     
-    static let host = "https://ix86.win:8081/"
-    
+//    static var host = "https://ix86.win:8081/"
+    static var host = "http://localhost/"
+
     #else // 线上环境
     
-    static let host = "https://ix86.win:8081/"
+    static var host = "https://ix86.win:8081/"
     
     #endif
 
