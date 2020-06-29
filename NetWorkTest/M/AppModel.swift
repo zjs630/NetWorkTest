@@ -23,13 +23,13 @@ struct AppModel: Decodable {
      */
 }
 
-struct ResultList<T: Codable>: Codable {
+struct ResultList<T: Decodable>: Decodable {
     var code: UInt
     var message: String
     var data: [T]
 }
 
-struct ResultDic<T: Codable>: Codable {
+struct ResultDic<T: Decodable>: Decodable {
     var code: UInt
     var message: String
     var data: T

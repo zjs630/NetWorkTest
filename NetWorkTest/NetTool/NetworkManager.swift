@@ -34,18 +34,18 @@ class NetworkManager: Session {
     ///   - headers: HTTPHeaders
     /// - Returns: DataRequest
     static func request(
-        _ url: String,
+        _ path: String,
         method: HTTPMethod = .get,
         parameters: Parameters? = nil,
         encoding: ParameterEncoding = URLEncoding.default,
         headers: HTTPHeaders? = nil) -> DataRequest {
-        let urlStr = NetHostConfig.host.appending(url)
+        let urlStr = NetHostConfig.host.appending(path)
         return NetworkManager.shared.request(urlStr, method: method, parameters: parameters, encoding: encoding, headers: headers)
     }
 
     // 直接将网络数据转Model
     static func requestDecodable<T: Decodable>(
-        _ url: String,
+        _ path: String,
         method: HTTPMethod = .get,
         parameters: Parameters? = nil,
         encoding: ParameterEncoding = URLEncoding.default,
@@ -53,7 +53,7 @@ class NetworkManager: Session {
         type: T.Type = T.self,
         completionHandler: @escaping (AFDataResponse<T>) -> Void){
 
-        let urlStr = NetHostConfig.host.appending(url)
+        let urlStr = NetHostConfig.host.appending(path)
         NetworkManager.shared.request(urlStr, method: method, parameters: parameters, encoding: encoding, headers: headers).responseDecodable(of:type, decoder: NetworkManager.decoder,completionHandler: completionHandler)
     }
 
